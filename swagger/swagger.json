@@ -1,0 +1,74 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Translation API",
+    "description": "API documentation for Translation Management"
+  },
+  "host": "localhost:8000",
+  "basePath": "/api",
+  "schemes": ["http"],
+  "paths": {
+    "/translations": {
+      "get": {
+        "summary": "List all translations",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new translation",
+        "parameters": [{
+          "in": "body",
+          "name": "translation",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Translation"
+          }
+        }],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/translations/export/{locale}": {
+      "get": {
+        "summary": "Export translations by locale",
+        "parameters": [{
+          "name": "locale",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Translation": {
+      "type": "object",
+      "properties": {
+        "locale": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
