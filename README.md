@@ -49,9 +49,9 @@ php artisan key:generate
 DB_CONNECTION=mysql
 DB_HOST=db
 DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=user
-DB_PASSWORD=secret
+DB_DATABASE=translation-db
+DB_USERNAME=SecretUser
+DB_PASSWORD=Secret#123
 ```
 
 ---
