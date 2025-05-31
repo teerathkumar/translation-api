@@ -192,9 +192,9 @@ services:
     image: mysql:8
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: laravel
-      MYSQL_USER: user
-      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: translation-db
+      MYSQL_USER: SecretUser
+      MYSQL_PASSWORD: Secret#123
     ports:
       - "3306:3306"
     volumes:
